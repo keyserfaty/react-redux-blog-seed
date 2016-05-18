@@ -1,4 +1,7 @@
-.idea
-*.iml
-/node_modules
-/st
+node_modules
+dist/
+!dist/index.html
+npm-debug.log
+.idea/
+*-compiled.js
+*-compiled.js.map
