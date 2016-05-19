@@ -1,17 +1,10 @@
 import React from 'react';
 
-export const SmallButton = ({ name, value, placeholder, onChange }) => (
-  <div className="form-group">
-    <div className="col-sm-12">
-      <input
-        type="text"
-        rows="3"
-        className="form-control1 input-sm"
-        name={name}
-        value={value}
-        placeholder={placeholder}
-        onChange={onChange}
-      />
-    </div>
-  </div>
+export const SmallButton = ({ value, onClick }) => (
+  <input
+    type="submit"
+    className="buttonClass"
+    value={value}
+    onClick={onClick}
+  />
 );

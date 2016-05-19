@@ -1,7 +1,8 @@
 import React from 'react';
+import { BreadCrumbs } from './Breadcrumbs';
 
-export const Banner = ({ components }) => (
+export const Banner = ({ links }) => (
   <div className="banner">
-    { components }
+    <BreadCrumbs links={links} />
   </div>
 );

@@ -9,8 +9,8 @@ function tagsRequest() {
       requestingTags: true,
       requestingTagsSuccess: false,
     },
-  }
-};
+  };
+}
 
 function tagsRequestSuccess(tags) {
   return {
@@ -20,8 +20,8 @@ function tagsRequestSuccess(tags) {
       requestingTagsSuccess: true,
       tags,
     },
-  }
-};
+  };
+}
 
 function tagsRequestFailure(error) {
   return {
@@ -31,8 +31,8 @@ function tagsRequestFailure(error) {
       requestingTagsSuccess: false,
       error: new Error(error),
     },
-  }
-};
+  };
+}
 
 export function fetchTags() {
   return function tagsFetch(dispatch) {
@@ -51,4 +51,4 @@ export function fetchTags() {
         return dispatch(tagsRequestFailure('Fetching tags failed'));
       });
   };
-};
+}

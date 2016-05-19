@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import posts from './posts/reducers';
-import tags from './tags/reducers';
+import { posts } from './posts/reducers';
+import { tags } from './tags/reducers';
 
-export default entities = combineReducers({
+export const entities = combineReducers({
   posts,
   tags,
 });

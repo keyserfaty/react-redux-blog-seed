@@ -1,2 +1,2 @@
-export default view = (state = {}, action) => {};
+// export const view = (state = {}, action) => {};
 

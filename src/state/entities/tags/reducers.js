@@ -10,23 +10,23 @@ const initialState = {
   requestingTagsSuccess: '',
 };
 
-export default tags = (state = initialState, action) => {
+export const tags = (state = initialState, action) => {
   switch (action.type) {
-    case TAGS_REQUEST:
-    case TAGS_REQUEST_FAILURE:
-      return {
-        requestingTags: action.payload.requestingTags,
-        requestingTagsSuccess: action.payload.requestingTagsSuccess,
-      };
+  case TAGS_REQUEST:
+  case TAGS_REQUEST_FAILURE:
+    return {
+      requestingTags: action.payload.requestingTags,
+      requestingTagsSuccess: action.payload.requestingTagsSuccess,
+    };
 
-    case TAGS_REQUEST_SUCCESS:
-      return {
-        requestingTags: action.payload.requestingTags,
-        requestingTagsSuccess: action.payload.requestingTagsSuccess,
-        tags: action.payload.tags,
-      };
+  case TAGS_REQUEST_SUCCESS:
+    return {
+      requestingTags: action.payload.requestingTags,
+      requestingTagsSuccess: action.payload.requestingTagsSuccess,
+      tags: action.payload.tags,
+    };
 
-    default:
-      return state;
-  };
+  default:
+    return state;
+  }
 };

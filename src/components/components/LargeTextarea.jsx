@@ -9,7 +9,7 @@ export const LargeTextarea = ({ name, value, placeholder, onChange }) => (
         className="form-control1"
         name={name}
         value={value}
-        value={value}
+        onChange={onChange}
         placeholder={placeholder}
       />
     </div>

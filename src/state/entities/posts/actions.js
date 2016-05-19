@@ -9,8 +9,8 @@ function entriesRequest() {
       requestingEntries: true,
       requestingEntriesSuccess: false,
     },
-  }
-};
+  };
+}
 
 function entriesRequestSuccess(entries) {
   return {
@@ -20,8 +20,8 @@ function entriesRequestSuccess(entries) {
       requestingEntriesSuccess: true,
       entries,
     },
-  }
-};
+  };
+}
 
 function entriesRequestFailure(error) {
   return {
@@ -31,8 +31,8 @@ function entriesRequestFailure(error) {
       requestingEntriesSuccess: false,
       error: new Error(error),
     },
-  }
-};
+  };
+}
 
 export function fetchEntries() {
   return function entriesFetch(dispatch) {
@@ -51,7 +51,7 @@ export function fetchEntries() {
         return dispatch(entriesRequestFailure('Fetching entries failed'));
       });
   };
-};
+}
 
 export const POST_ENTRY = 'POST_ENTRY';
 export const POST_ENTRY_SUCCESS = 'POST_ENTRY_SUCCESS';
@@ -64,8 +64,8 @@ function postEntry() {
       postingEntry: true,
       postingEntrySuccess: false,
     },
-  }
-};
+  };
+}
 
 function postEntrySuccess(entries) {
   return {
@@ -75,8 +75,8 @@ function postEntrySuccess(entries) {
       postingEntrySuccess: true,
       entries,
     },
-  }
-};
+  };
+}
 
 function postEntryFailure(error) {
   return {
@@ -86,8 +86,8 @@ function postEntryFailure(error) {
       postingEntrySuccess: false,
       error: new Error(error),
     },
-  }
-};
+  };
+}
 
 export function fetchPostEntry(content) {
   return function entryPostFetch(dispatch) {
@@ -114,4 +114,4 @@ export function fetchPostEntry(content) {
         return dispatch(postEntryFailure('Posting entry failed'));
       });
   };
-};
+}
