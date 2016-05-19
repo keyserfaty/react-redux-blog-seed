@@ -1,5 +1,5 @@
 import {
-  TAGS_REQUEST
+  TAGS_REQUEST,
   TAGS_REQUEST_SUCCESS,
   TAGS_REQUEST_FAILURE,
 } from './actions';

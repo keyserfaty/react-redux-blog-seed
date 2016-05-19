@@ -8,8 +8,8 @@ import thunkMiddleware from 'redux-thunk';
 
 import { createHashHistory } from 'history';
 
-import { Post } from './components/Post.jsx';
-import { Entries } from './components/Entries.jsx';
+import { Post } from './components/views/Post.jsx';
+import { Entries } from './components/views/Entries.jsx';
 
 import entities from './state/entities/reducers';
 import view from './state/view/reducers';
@@ -28,7 +28,7 @@ const store = createStore(combineReducers({
 ReactDOM.render((
   <Provider store={store}>
     <Router history={appHistory}>
-      <Route path="/" component={Entries} />
+      <Route path="/" component={Post} />
       <Route path="entries" component={Entries} />
       <Route path="post" component={Post} />
       <Route path="*" component={Entries} />
