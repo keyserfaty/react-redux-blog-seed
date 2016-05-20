@@ -4,6 +4,7 @@ export const LargeTextarea = ({ name, value, placeholder, onChange }) => (
   <div className="form-group">
     <div className="col-sm-12">
       <textarea
+        id="txtarea1"
         rows="20"
         cols="50"
         className="form-control1"

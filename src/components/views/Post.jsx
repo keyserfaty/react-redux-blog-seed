@@ -8,21 +8,31 @@ import { SmallButton } from '../components/SmallButton.jsx';
 export const Post = () => {
   const breadCrumbsLinks = [
     {
-      name: 'Editor',
-      href: '/editor',
+      name: 'All Posts',
+      href: '/entries',
     }, {
-      name: 'Post',
+      name: 'Add New Post',
       href: '/post',
     },
   ];
 
   return (
     <div>
-      <Banner links={breadCrumbsLinks} />
-      <TitleH3 title="Add a new Post" />
-      <SmallInput />
-      <LargeTextarea />
-      <SmallButton value="Publish" />
+      <div id="page-wrapper" className="gray-bg dashbard-1">
+        <div className="content-main">
+          <Banner links={breadCrumbsLinks} />
+          <div className="grid-form">
+            <div className="grid-form1">
+              <TitleH3 title="Add a new Post" />
+              <form className="form-horizontal">
+                <SmallInput placeholder="Add a title..." />
+                <LargeTextarea placeholder="Add some content..." />
+                <SmallButton value="Publish" onClick='' />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

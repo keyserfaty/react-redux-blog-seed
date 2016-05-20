@@ -3,13 +3,21 @@ import { Link } from 'react-router';
 import _ from 'lodash';
 
 export const BreadCrumbs = ({ links }) => (
-  <span>
-    { _.map(links, (link, i) => (
-      <span key={i}>
-        <Link to={link.href}>{link.name}</Link>
-        <i className="fa fa-angle-right" />
-      </span>
-    ))
+  <h2>
+    { _.map(links, (link, i) => {
+      if (i === links.length -1) {
+        return (
+          <span key={i}>
+            {link.name}
+          </span>
+        );
+      }
+      return (
+        <span key={i}>
+          <Link to={link.href}>{link.name}</Link>
+        </span>
+      )}
+    )
     }
-  </span>
+  </h2>
 );
