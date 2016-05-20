@@ -5,7 +5,7 @@ import {
 } from './actions';
 
 const initialState = {
-  tags: {},
+  tags: [],
   requestingTags: '',
   requestingTagsSuccess: '',
 };
@@ -23,7 +23,10 @@ export const tags = (state = initialState, action) => {
     return {
       requestingTags: action.payload.requestingTags,
       requestingTagsSuccess: action.payload.requestingTagsSuccess,
-      tags: action.payload.tags,
+      tags: [
+        ...state.tags,
+        action.payload.tags,
+      ],
     };
 
   default:

@@ -10,7 +10,7 @@ import createLogger from 'redux-logger';
 
 import { createHashHistory } from 'history';
 
-import { Post } from './components/views/Post.jsx';
+import { PostContainer } from './components/views/PostContainer.jsx';
 import { Entries } from './components/views/Entries.jsx';
 
 import { entities } from './state/entities/reducers';
@@ -31,7 +31,7 @@ render(
       <Router history={appHistory}>
         <Route path="/" component={Entries} />
         <Route path="entries" component={Entries} />
-        <Route path="post" component={Post} />
+        <Route path="post" component={PostContainer} />
         <Route path="*" component={Entries} />
       </Router>
     </Provider>

@@ -5,16 +5,9 @@ import { SmallInput } from '../components/SmallInput.jsx';
 import { LargeTextarea } from '../components/LargeTextarea.jsx';
 import { SmallButton } from '../components/SmallButton.jsx';
 
-export const Post = () => {
-  const breadCrumbsLinks = [
-    {
-      name: 'All Posts',
-      href: '/entries',
-    }, {
-      name: 'Add New Post',
-      href: '/post',
-    },
-  ];
+export const Post = (that) => {
+  const { onPublishClick, onChange, breadCrumbsLinks } = that;
+  const { title, content } = that.state;
 
   return (
     <div>
@@ -24,11 +17,26 @@ export const Post = () => {
           <div className="grid-form">
             <div className="grid-form1">
               <TitleH3 title="Add a new Post" />
-              <form className="form-horizontal">
-                <SmallInput placeholder="Add a title..." />
-                <LargeTextarea placeholder="Add some content..." />
-                <SmallButton value="Publish" onClick='' />
-              </form>
+              <div className="form-horizontal">
+                <SmallInput
+                  placeholder="Add a title..."
+                  name="title"
+                  value={title}
+                  onChange={onChange}
+                />
+
+                <LargeTextarea
+                  placeholder="Add some content..."
+                  name="content"
+                  value={content}
+                  onChange={onChange}
+                />
+
+                <SmallButton
+                  value="Publish"
+                  onClick={onPublishClick}
+                />
+              </div>
             </div>
           </div>
         </div>

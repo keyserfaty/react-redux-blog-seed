@@ -8,7 +8,7 @@ import {
 } from './actions';
 
 const initialState = {
-  posts: {},
+  entries: [],
   requestingEntries: '',
   requestingEntriesSuccess: '',
   postingEntry: '',
@@ -20,23 +20,39 @@ export const posts = (state = initialState, action) => {
   case ENTRIES_REQUEST:
   case ENTRIES_REQUEST_FAILURE:
     return {
+      ...state,
       requestingEntries: action.payload.requestingEntries,
       requestingEntriesSuccess: action.payload.requestingEntriesSuccess,
     };
 
   case ENTRIES_REQUEST_SUCCESS:
     return {
+      ...state,
       requestingEntries: action.payload.requestingEntries,
       requestingEntriesSuccess: action.payload.requestingEntriesSuccess,
-      posts: action.payload.posts,
+      entries: [
+        ...state.entries,
+        action.payload.entry,
+      ],
     };
 
   case POST_ENTRY:
   case POST_ENTRY_FAILURE:
-  case POST_ENTRY_SUCCESS:
     return {
+      ...state,
       postingEntry: action.payload.postingEntry,
       postingEntrySuccess: action.payload.postingEntrySuccess,
+    };
+
+  case POST_ENTRY_SUCCESS:
+    return {
+      ...state,
+      postingEntry: action.payload.postingEntry,
+      postingEntrySuccess: action.payload.postingEntrySuccess,
+      entries: [
+        ...state.entries,
+        action.payload.entry,
+      ],
     };
 
   default:

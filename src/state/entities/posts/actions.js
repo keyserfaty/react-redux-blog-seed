@@ -67,13 +67,13 @@ function postEntry() {
   };
 }
 
-function postEntrySuccess(entries) {
+function postEntrySuccess(entry) {
   return {
     type: POST_ENTRY_SUCCESS,
     payload: {
       postingEntry: false,
       postingEntrySuccess: true,
-      entries,
+      entry,
     },
   };
 }

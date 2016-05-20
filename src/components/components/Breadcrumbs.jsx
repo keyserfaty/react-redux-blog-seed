@@ -5,7 +5,7 @@ import _ from 'lodash';
 export const BreadCrumbs = ({ links }) => (
   <h2>
     { _.map(links, (link, i) => {
-      if (i === links.length -1) {
+      if (i === links.length - 1) {
         return (
           <span key={i}>
             {link.name}
@@ -16,8 +16,7 @@ export const BreadCrumbs = ({ links }) => (
         <span key={i}>
           <Link to={link.href}>{link.name}</Link>
         </span>
-      )}
-    )
-    }
+      );
+    })}
   </h2>
 );
