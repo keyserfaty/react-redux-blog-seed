@@ -11,7 +11,7 @@ import createLogger from 'redux-logger';
 import { createHashHistory } from 'history';
 
 import { PostContainer } from './components/views/PostContainer.jsx';
-import { Entries } from './components/views/Entries.jsx';
+import Entries from './components/views/Entries';
 
 import { entities } from './state/entities/reducers';
 

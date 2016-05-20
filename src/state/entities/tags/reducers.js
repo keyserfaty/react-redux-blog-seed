@@ -15,12 +15,14 @@ export const tags = (state = initialState, action) => {
   case TAGS_REQUEST:
   case TAGS_REQUEST_FAILURE:
     return {
+      ...state,
       requestingTags: action.payload.requestingTags,
       requestingTagsSuccess: action.payload.requestingTagsSuccess,
     };
 
   case TAGS_REQUEST_SUCCESS:
     return {
+      ...state,
       requestingTags: action.payload.requestingTags,
       requestingTagsSuccess: action.payload.requestingTagsSuccess,
       tags: [
