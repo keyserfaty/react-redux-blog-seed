@@ -92,26 +92,26 @@ function postEntryFailure(error) {
 export function fetchPostEntry(content) {
   return function entryPostFetch(dispatch) {
     dispatch(postEntry());
-
-    return fetch('', {
-      method: 'POST',
-      credentials: 'include',
-      headers: {
-        Accept: 'application/json, text/plain, */*',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        title: content.title,
-        content,
-      }),
-    })
-      .then(response => response.json())
-      .then(response => {
-        if (response.status === 'true') {
-          return dispatch(postEntrySuccess(response));
-        }
-
-        return dispatch(postEntryFailure('Posting entry failed'));
-      });
+    return dispatch(postEntrySuccess(content));
+    // return fetch('', {
+    //   method: 'POST',
+    //   credentials: 'include',
+    //   headers: {
+    //     Accept: 'application/json, text/plain, */*',
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     title: content.title,
+    //     content,
+    //   }),
+    // })
+    //   .then(response => response.json())
+    //   .then(response => {
+    //     if (response.status === 'true') {
+    //       return dispatch(postEntrySuccess(response));
+    //     }
+    //
+    //     return dispatch(postEntryFailure('Posting entry failed'));
+    //   });
   };
 }

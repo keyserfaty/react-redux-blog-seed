@@ -1,10 +1,9 @@
 import React from 'react';
 
 export const SmallButton = ({ value, onClick }) => (
-  <input
+  <button
     type="submit"
-    className="buttonClass"
-    value={value}
+    className="small-button"
     onClick={onClick}
-  />
+  >{value}</button>
 );

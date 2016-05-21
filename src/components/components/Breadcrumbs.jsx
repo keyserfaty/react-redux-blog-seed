@@ -4,11 +4,11 @@ import { Link } from 'react-router';
 import _ from 'lodash';
 
 export const BreadCrumbs = ({ links }) => (
-  <h2>
+  <span className="breadcrumbs">
     { _.map(links, (link, i) => (
       <span key={i}>
         <Link to={link.href}>{link.name}</Link>
       </span>
     ))}
-  </h2>
+  </span>
 );

@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('./fonts/Montserrat-Regular.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Muli-Regular';
+  src: url('./fonts/Muli-Regular.ttf') format('opentype');
+}
+
+body {
+  background-color: #F3F3F4;
+  margin: 15px;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+h3 {
+  font: 28px/32px 'Montserrat-Regular', Serif;
+  margin-bottom: 15px;
+}
+
+p {
+  font: 16px/24px 'Montserrat-Regular', Serif;
+}
+
+.box {
+  background: #fff;
+  border-radius: 3px;
+  padding: 18px;
+  margin-bottom: 15px;
+  border: 1px solid #ebeff6;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.breadcrumbs a {
+  font: 14px 'Muli-Regular', Serif;
+  color: #D95459;
+  text-decoration: none;
+  padding-right: 15px;
+}
+
+.small-button {
+  font: 14px 'Muli-Regular', Serif;
+  padding: 10px 15px;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  background-color: #D95459;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.small-button:hover {
+  background-color: #D9545f;
+  cursor: pointer;
+}
+
+.small-button:focus {
+  outline: none;
+}
+
+.small-input {
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  color: #616161;
+  font: 14px 'Muli-Regular', Serif;
+  margin-top: 15px;
+  padding: 5px 8px;
+  height: 35px;
+  width: 100%;
+  outline: none;
+  box-sizing:border-box
+}
+
+.large-textarea {
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  color: #616161;
+  font: 14px 'Muli-Regular', Serif;
+  margin-top: 15px;
+  padding: 5px 8px;
+  width: 100%;
+  outline: none;
+  box-sizing:border-box
+}

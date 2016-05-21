@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 
-import { Banner } from '../components/Banner.jsx';
 import { SingleEntry } from './SingleEntry';
+import { BreadCrumbs } from '../components/Breadcrumbs';
 
 const EntriesComponent = ({ entries }) => {
   const breadCrumbsLinks = [
@@ -17,9 +17,11 @@ const EntriesComponent = ({ entries }) => {
   ];
 
   return (
-    <div id="page-wrapper" className="gray-bg dashbard-1">
-      <div className="content-main">
-        <Banner links={breadCrumbsLinks} />
+    <div className="wrapper">
+      <div className="box-container">
+        <div className="box">
+          <BreadCrumbs links={breadCrumbsLinks} />
+        </div>
         { _.map(entries, entry =>
           <SingleEntry title={entry.title} content={entry.content} />
         )}
