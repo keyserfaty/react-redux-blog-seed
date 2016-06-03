@@ -1,6 +1,6 @@
 ## react-redux-blog-seed
 
-This is a small seed for a React/Redux project and it is also an experiment on how to build a React project with a better structure. A blog was used for the example to keep the structure simple.
+This is a small seed for a React/Redux project. It is also an experiment on how to build a React project with a better structure. A blog was used for the example to keep it simple.
 
 ## Installation
 To get going you just need to:
@@ -11,9 +11,9 @@ To get going you just need to:
 App will run from `http://localhost:8080`
 
 ## Structure explanation
-The project is divided into two main folders: `components` and `state`. The aim was to have a very clear separation of concerns where the files that were used across the whole app would be visible to every component.
+The project is divided into two main folders: `components` and `state`.
 
-As most components tend to interact with the state of the app (i.e. the actions and reducers) the state was kept in a separate folder where the actions and reducers wouldn't have to be component or view specific. Because of that the state folder reproduces the structure of the actual app state:
+When an app starts to scale is usually hard to keep the actions and reducers of the app component or view related because some components start to interact with actions and reducers from other components. Because of this, the state of the app was kept in a separate folder and the files inside of it try to reproduce the structure of the actual app `state`. This way things are easy to find and to work with.
 
     .state
     ├── Entities
@@ -21,7 +21,7 @@ As most components tend to interact with the state of the app (i.e. the actions 
     │ ├── tags
     ├── View
 
-On the other hand the components folder is divided into two separate folders: `components` and `views`. The idea was to keep every UI element in one place (i.e. the components folder) and to create the components related to a specific view inside the views folder, by sticking together UI elements from the components folder:
+Something similar happens to components when an application starts to grow. If we create a component for every single view we have we suddenly start having lots of repeated code everywhere. Having a separate component for every view is ok but to let an application scale wellwe need to keep every UI element of our app in one place. This way, the moment we need to add a view to our app all we need to do is to stick together some of those UI components into a view. An example from the `Post` view:
 
 ```javascript
 {/* from src/components/views/Post.jsx */}
@@ -49,6 +49,9 @@ On the other hand the components folder is divided into two separate folders: `c
       />
 </div>
 ```
+
+Because of this, the `components` folder is divided into to main folders: `components` and `views`. `components` is where we should keep all our UI elements (and by UI elements I really mean that: button, form, text-area, etc...) and `views` is where we should keep that: the views of our apps.
+
 
 ## WIP
 - [ ]  Add normalizer to normalize the posts coming from the requests.
