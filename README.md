@@ -21,7 +21,7 @@ When an app starts to scale is usually hard to keep the actions and reducers of 
     │ ├── tags
     ├── View
 
-Something similar happens to components when an application starts to grow. If we create a component for every single view we have we suddenly start having lots of repeated code everywhere. Having a separate component for every view is ok but to let an application scale wellwe need to keep every UI element of our app in one place. This way, the moment we need to add a view to our app all we need to do is to stick together some of those UI components into a view. An example from the `Post` view:
+Something similar happens to components when an application starts to grow. If we create a component for every single view we have we suddenly start having lots of repeated code everywhere. Having a separate component for every view is ok but to let an application scale well we need to keep every UI element of our app in one place. This way, the moment we need to add a view to our app all we need to do is to stick together some of those UI components into a view. An example from the `Post` view:
 
 ```javascript
 {/* from src/components/views/Post.jsx */}
@@ -50,7 +50,7 @@ Something similar happens to components when an application starts to grow. If w
 </div>
 ```
 
-Because of this, the `components` folder is divided into to main folders: `components` and `views`. `components` is where we should keep all our UI elements (and by UI elements I really mean that: button, form, text-area, etc...) and `views` is where we should keep that: the views of our apps.
+Because of this, the `components` folder is divided into to main folders: `components` and `views`. `components` is where we should keep all our UI elements (and by UI elements I really mean that: button, form, text-area, etc...) and `views` is where we should keep that: the views of our app.
 
 
 ## WIP
