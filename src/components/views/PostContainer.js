@@ -9,7 +9,7 @@ class PostContainerComponent extends Component {
     super(props)
     this.state = {
       title: '',
-      content: ''
+      content: '',
     }
 
     this.onPublishClick = this.onPublishClick.bind(this)
@@ -23,7 +23,7 @@ class PostContainerComponent extends Component {
 
   onChange(e) {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     })
   }
 
@@ -35,7 +35,7 @@ class PostContainerComponent extends Component {
       }, {
         name: 'Add New Post',
         href: '/post'
-      }
+      },
     ]
 
     return (

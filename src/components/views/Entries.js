@@ -13,7 +13,7 @@ const EntriesComponent = ({ entries }) => {
     }, {
       name: 'Add New Post',
       href: '/post'
-    }
+    },
   ]
 
   return (
