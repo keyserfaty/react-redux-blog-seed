@@ -78,16 +78,16 @@ function postEntrySuccess(entry) {
   };
 }
 
-function postEntryFailure(error) {
-  return {
-    type: POST_ENTRY_FAILURE,
-    payload: {
-      postingEntry: false,
-      postingEntrySuccess: false,
-      error: new Error(error),
-    },
-  };
-}
+// function postEntryFailure(error) {
+//   return {
+//     type: POST_ENTRY_FAILURE,
+//     payload: {
+//       postingEntry: false,
+//       postingEntrySuccess: false,
+//       error: new Error(error),
+//     },
+//   };
+// }
 
 export function fetchPostEntry(content) {
   return function entryPostFetch(dispatch) {
