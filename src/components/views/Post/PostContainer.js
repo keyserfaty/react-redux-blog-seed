@@ -9,16 +9,6 @@ class PostContainerComponent extends Component {
     dispatch: PropTypes.func.isRequired,
   };
 
-  static breadCrumbsLinks = [
-    {
-      name: 'All Posts',
-      href: '/entries',
-    }, {
-      name: 'Add New Post',
-      href: '/post',
-    },
-  ];
-
   constructor(props) {
     super(props);
     this.state = {
