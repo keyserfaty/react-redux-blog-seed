@@ -54,8 +54,10 @@ Because of this, the `components` folder is divided into to main folders: `compo
 
 
 ## WIP
-- [ ]  Add normalizer to normalize the posts coming from the requests.
-- [ ] Add mocha.
+- [x] Add propTypes
+- [x] Add proper routing
+- [ ] Add normalizer to normalize the posts coming from the requests
+- [ ] Add testing
 - [ ] Keep every sass file related to a UI component
 
 
