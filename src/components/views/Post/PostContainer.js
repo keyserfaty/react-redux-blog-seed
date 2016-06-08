@@ -32,9 +32,8 @@ class PostContainerComponent extends Component {
   }
 
   render() {
-    const { breadCrumbsLinks } = PostContainerComponent;
     return (
-      <Post {...this} {...this.state} breadCrumbsLinks={breadCrumbsLinks} />
+      <Post {...this} {...this.state} />
     );
   }
 }
