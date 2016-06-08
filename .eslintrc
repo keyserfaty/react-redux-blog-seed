@@ -1,5 +1,6 @@
 {
   "extends": "airbnb",
+  "parser": "babel-eslint",
   "plugins": [
     "react"
   ],
@@ -9,8 +10,6 @@
     }
   },
   "rules": {
-    "react/prop-types": 0,
-    "react/jsx-no-bind": 0,
     "indent": ["error", 2, {
       "VariableDeclarator": { "var": 2, "let": 2, "const": 3 }
     }]

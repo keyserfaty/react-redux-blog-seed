@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { map } from 'lodash';
 
-import { SingleEntry } from './SingleEntry';
-import { BreadCrumbs } from '../components/Breadcrumbs';
+import SingleEntry from './SingleEntry';
+import BreadCrumbs from '../../components/BreadCrumbs';
 
-const EntriesComponent = ({ entries }) => {
+let Entries = ({ entries }) => {
   const breadCrumbsLinks = [
     {
       name: 'All Posts',
@@ -30,8 +30,14 @@ const EntriesComponent = ({ entries }) => {
   );
 };
 
+Entries.propTypes = {
+  entries: PropTypes.array.isRequired,
+};
+
 const mapStateToProps = (state) => ({
   entries: state.entities.posts.entries,
 });
 
-export const Entries = connect(mapStateToProps)(EntriesComponent);
+Entries = connect(mapStateToProps)(Entries);
+
+export default Entries;

@@ -10,8 +10,8 @@ import createLogger from 'redux-logger';
 
 import { createHashHistory } from 'history';
 
-import { PostContainer } from './components/views/PostContainer';
-import { Entries } from './components/views/Entries';
+import { PostContainer } from './components/views/Post/PostContainer';
+import Entries from './components/views/Entries/Entries';
 
 import { entities } from './state/entities/reducers';
 

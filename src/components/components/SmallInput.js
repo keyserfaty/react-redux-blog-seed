@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-export const SmallInput = ({ name, value, placeholder, onChange }) => (
+const SmallInput = ({ name, value, placeholder, onChange }) => (
   <input
     type="text"
     rows="3"
@@ -11,3 +11,12 @@ export const SmallInput = ({ name, value, placeholder, onChange }) => (
     onChange={onChange}
   />
 );
+
+SmallInput.propTypes = {
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
+
+export default SmallInput;

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-export const LargeTextarea = ({ name, value, placeholder, onChange }) => (
+const LargeTextarea = ({ name, value, placeholder, onChange }) => (
   <textarea
     rows="20"
     cols="50"
@@ -11,3 +11,12 @@ export const LargeTextarea = ({ name, value, placeholder, onChange }) => (
     placeholder={placeholder}
   />
 );
+
+LargeTextarea.propTypes = {
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
+
+export default LargeTextarea;

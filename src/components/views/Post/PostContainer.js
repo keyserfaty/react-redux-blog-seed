@@ -1,10 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { Post } from './Post';
-import { fetchPostEntry } from '../../state/entities/posts/actions';
+import Post from './Post';
+import { fetchPostEntry } from '../../../state/entities/posts/actions';
 
 class PostContainerComponent extends Component {
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+  };
+
+  static breadCrumbsLinks = [
+    {
+      name: 'All Posts',
+      href: '/entries',
+    }, {
+      name: 'Add New Post',
+      href: '/post',
+    },
+  ];
+
   constructor(props) {
     super(props);
     this.state = {
@@ -28,18 +42,9 @@ class PostContainerComponent extends Component {
   }
 
   render() {
-    const breadCrumbsLinks = [
-      {
-        name: 'All Posts',
-        href: '/entries',
-      }, {
-        name: 'Add New Post',
-        href: '/post',
-      },
-    ];
-
+    const { breadCrumbsLinks } = PostContainerComponent;
     return (
-      <Post {...this} breadCrumbsLinks={breadCrumbsLinks} />
+      <Post {...this} {...this.state} breadCrumbsLinks={breadCrumbsLinks} />
     );
   }
 }

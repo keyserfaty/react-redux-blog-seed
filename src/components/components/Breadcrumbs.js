@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import { Link } from 'react-router';
 import { map } from 'lodash';
 
-export const BreadCrumbs = ({ links }) => (
+const BreadCrumbs = ({ links }) => (
   <span className="breadcrumbs">
     { map(links, (link, i) => (
       <span key={i}>
@@ -12,3 +12,9 @@ export const BreadCrumbs = ({ links }) => (
     ))}
   </span>
 );
+
+BreadCrumbs.propTypes = {
+  links: PropTypes.array.isRequired,
+};
+
+export default BreadCrumbs;
