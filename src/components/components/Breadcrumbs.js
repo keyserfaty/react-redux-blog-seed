@@ -1,11 +1,10 @@
 import React, { PropTypes } from 'react';
 
 import { Link } from 'react-router';
-import { map } from 'lodash';
 
 const BreadCrumbs = ({ links }) => (
   <span className="breadcrumbs">
-    { map(links, (link, i) => (
+    { links.map((link, i) => (
       <span key={i}>
         <Link to={link.href}>{link.name}</Link>
       </span>
