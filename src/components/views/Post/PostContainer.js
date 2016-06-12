@@ -15,14 +15,11 @@ class PostContainerComponent extends Component {
       title: '',
       content: '',
     };
-
-    this.onPublishClick = this.onPublishClick.bind(this);
-    this.onChange = this.onChange.bind(this);
   }
 
   onPublishClick() {
-    const { dispatch } = this.props;
-    dispatch(fetchPostEntry(this.state));
+    const { fetchPost } = this.props;
+    fetchPost(this.state);
   }
 
   onChange(e) {
@@ -32,10 +29,22 @@ class PostContainerComponent extends Component {
   }
 
   render() {
+    const { title, content } = this.state
     return (
-      <Post {...this} {...this.state} />
+      <Post
+        onChange={this.onChange.bind(this)}
+        onPublishClick={this.onPublishClick.bind(this)}
+        title={title}
+        content={content}
+      />
     );
   }
 }
 
-export const PostContainer = connect()(PostContainerComponent);
+export const mapDispatchToProps = (dispatch) => ({
+  fetchPost: (post) => {
+    dispatch(fetchPostEntry(post))
+  }
+})
+
+export const PostContainer = connect(null, mapDispatchToProps)(PostContainerComponent);
