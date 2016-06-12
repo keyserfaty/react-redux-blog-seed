@@ -1,12 +1,11 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { map } from 'lodash';
 
 import SingleEntry from './SingleEntry';
 
 let Entries = ({ entries }) => (
   <span>
-    { map(entries, entry =>
+    { entries.map(entry =>
       <SingleEntry title={entry.title} key={`${entry.title}_id`} content={entry.content} />
     )}
   </span>
