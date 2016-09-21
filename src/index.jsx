@@ -29,10 +29,6 @@ function startSagas (...sagas) {
   };
 }
 
-const theSagas = startSagas(
-  ...postsSagas,
-);
-
 const store = createStore(combineReducers({
   entities,
 }), applyMiddleware(
@@ -40,7 +36,9 @@ const store = createStore(combineReducers({
   loggerMiddleware
 ));
 
-sagaMiddleware.run(theSagas);
+sagaMiddleware.run(startSagas(
+  ...postsSagas,
+));
 
 render(
   <div>

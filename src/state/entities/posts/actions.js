@@ -38,23 +38,23 @@ export const POST_ENTRY = 'POST_ENTRY';
 export const POST_ENTRY_SUCCESS = 'POST_ENTRY_SUCCESS';
 export const POST_ENTRY_FAILURE = 'POST_ENTRY_FAILURE';
 
-export function postEntry(entry) {
+export function postEntry() {
   return {
     type: POST_ENTRY,
     payload: {
       postingEntry: true,
       postingEntrySuccess: false,
-      entry,
     },
   };
 }
 
-export function postEntrySuccess() {
+export function postEntrySuccess(entry) {
   return {
     type: POST_ENTRY_SUCCESS,
     payload: {
       postingEntry: false,
       postingEntrySuccess: true,
+      entry
     },
   };
 }

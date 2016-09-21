@@ -19,12 +19,12 @@ const entriesFetch = () =>
 export function* fetchEntriesWorker() {
   const { response, error } = yield call(entriesFetch);
 
-  if (response) yield put(actions.entriesRequestSuccess, response);
-  if (error) yield put(actions.entriesRequestFailure, error);
+  if (response) yield put(actions.entriesRequestSuccess({ response }));
+  if (error) yield put(actions.entriesRequestFailure({ error }));
 }
 
-export function* fetchPostEntry(content) {
-  yield put(actions.postEntrySuccess, content);
+export function* fetchPostEntryWorker(action) {
+  yield put(actions.postEntrySuccess(action.payload.entry));
 }
 
 /**
@@ -35,7 +35,7 @@ function* watchFetchEntries() {
 }
 
 function* watchPostEntry() {
-  yield* takeEvery(actions.postEntry, fetchPostEntry);
+  yield* takeEvery(actions.postEntry, fetchPostEntryWorker);
 }
 
 export default [
