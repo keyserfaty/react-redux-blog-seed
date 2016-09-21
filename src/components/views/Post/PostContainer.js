@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import Post from './Post';
-import { fetchPostEntry } from '../../../state/entities/posts/actions';
+import { postEntry } from '../../../state/entities/posts/actions';
 
 class PostContainerComponent extends Component {
   constructor(props) {
@@ -36,7 +36,7 @@ class PostContainerComponent extends Component {
 
 const mapStateToProps = state => ({});
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  onPublishClick: state => dispatch(fetchPostEntry(state))
+  onPublishClick: state => dispatch(postEntry(state))
 });
 
 export const PostContainer = connect(mapStateToProps, mapDispatchToProps)(PostContainerComponent);
