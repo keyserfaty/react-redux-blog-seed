@@ -5,6 +5,7 @@ import { Router, Route, useRouterHistory, IndexRoute } from 'react-router';
 import { applyMiddleware, createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
 
 import createLogger from 'redux-logger';
 
@@ -18,10 +19,12 @@ import { entities } from './state/entities/reducers';
 
 const appHistory = useRouterHistory(createHashHistory)({ queryKey: false });
 const loggerMiddleware = createLogger();
-
+const sagaMiddleware = createSagaMiddleware()
+;
 const store = createStore(combineReducers({
   entities,
 }), applyMiddleware(
+  sagaMiddleware,
   thunkMiddleware,
   loggerMiddleware
 ));

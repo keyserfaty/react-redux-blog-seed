@@ -5,10 +5,6 @@ import Post from './Post';
 import { fetchPostEntry } from '../../../state/entities/posts/actions';
 
 class PostContainerComponent extends Component {
-  static propTypes = {
-    dispatch: PropTypes.func.isRequired,
-  };
-
   constructor(props) {
     super(props);
     this.state = {
@@ -21,8 +17,8 @@ class PostContainerComponent extends Component {
   }
 
   onPublishClick() {
-    const { dispatch } = this.props;
-    dispatch(fetchPostEntry(this.state));
+    const { onPublishClick } = this.props;
+    onPublishClick(this.state);
   }
 
   onChange(e) {
@@ -38,4 +34,9 @@ class PostContainerComponent extends Component {
   }
 }
 
-export const PostContainer = connect()(PostContainerComponent);
+const mapStateToProps = state => ({});
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  onPublishClick: state => dispatch(fetchPostEntry(state))
+});
+
+export const PostContainer = connect(mapStateToProps, mapDispatchToProps)(PostContainerComponent);
